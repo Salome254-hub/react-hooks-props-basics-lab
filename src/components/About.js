@@ -1,18 +1,15 @@
 import React from "react";
 import Links from "./Links";
 
-function About() {
-function About(props) {
+function About({ bio, links }) {
   return (
     <div id="about">
       <h2>About Me</h2>
-      <p>Put the bio in here</p>
-      {props.bio && props.bio.length > 1 ? <p>{props.bio}</p> : ""}
+      {bio && bio.length > 1 ? <p>{bio}</p> : null}
       <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
-      {/* add your <Links /> component here */}
-      <Links github={props.links.github} linkedin={props.links.linkedin}/>
+      <Links github={links.github} linkedin={links.linkedin} />
     </div>
   );
 }
-}
+
 export default About;
